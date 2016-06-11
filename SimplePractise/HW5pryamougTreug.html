@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Теорема Піфагора</title>
+	<meta charset="utf-8">
+	</head>
+<body>
+	<script>
+	var storona1 = prompt("Введіть довжину першої сторони");
+	var storona2 = prompt("Введіть довжину другої сторони");
+	var storona3 = prompt("Введіть довжину третьої сторони");
+		if (!storona1 || !storona2 || !storona3)	{
+			alert("Розрахунок скасовано! Необхідно ввести три сторони!");
+		} else if	((storona1*storona1+storona2*storona2==storona3*storona3) || (storona1*storona1+storona3*storona3==storona2*storona2) || (storona2*storona2+storona3*storona3==storona1*storona1)&&(storona1&&storona2&&storona3>0)) {
+		alert("Це прямокутний трикутник! Вітаю!");
+		} else if(storona1<=0 || storona2<=0 || storona3<=0) {
+			alert("Кожна сторона трикутника має бути більше 0!");
+		}  else	{ alert("Нажаль, цей трикутник не є прямокутним.");
+	}
+	</script>
+</body>
+</html>

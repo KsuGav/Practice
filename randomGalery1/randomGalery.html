@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            width:100%;
+            height:100%;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        .wrapper{
+          width: 605px;
+            height:610px;
+            margin:auto;
+            background: antiquewhite;
+            border: 15px solid blanchedalmond;
+            border-radius: 20px;
+            box-shadow: 0 0 10px #EED5D2;
+        }
+        #pic1{
+            width: 400px;
+            height: 400px;
+            float: left;
+            margin: 1px;
+        }
+        #pic2{
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin: 1px;
+        }
+        #pic3,#pic4{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        #pic8,#pic9{
+            width: 100px;
+            height: 100px;
+            float: right;
+        }
+        #pic5,#pic6,#pic7{
+            width: 200px;
+            height: 100px;
+            float: left;
+        }
+        #pic10{
+            width: 300px;
+            height: 200px;
+            float: right;
+            margin: 1px;
+        }
+        #sum{
+            width: 302px;
+            height: 200px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper design">
+    <div class="forShow" id="pic1"><img src="0.jpg"/></div>
+    <div class="forShow" id="pic2"><img src="1.jpg"/></div>
+    <div class="forShow" id="pic3"><img src="12.jpg"/></div>
+    <div class="forShow" id="pic4"><img src="3.jpg"/></div>
+    <div class="forShow" id="pic5"><img src="4.jpg"/></div>
+    <div id="sum">
+    <div class="forShow" id="pic6"><img src="18.jpg"/></div>
+    <div class="forShow" id="pic8"><img src="6.jpg"/></div>
+    <div class="forShow"  id="pic7"><img src="7.jpg"/></div>
+    <div  class="forShow" id="pic9"><img src="19.jpg"/></div>
+    </div>
+    <div class="forShow" id="pic10"><img src="9.jpg"/></div>
+</div>
+<script>
+
+    $(document).ready(function() {
+        var sum = 19; //кол-во картинок
+        var dv = $(".forShow");
+        function galeryR() {
+            var someDiv = (Math.round(Math.random() * (dv.length-1)));
+            var someImg = (Math.round(Math.random() * sum));
+            var t = $(dv[someDiv]).children();
+            t.animate({
+                "opacity": 0.5
+            },{
+                duration:1000,
+                easing: "easeInBounce",
+                complete:function(){
+                    $(this).attr("src",someImg+".jpg").animate({"opacity": 1},2000)
+                }
+            });
+        }
+    setInterval(galeryR, 4000);
+    setInterval(galeryR, 3000);
+    });
+</script>
+</body>
+</html>

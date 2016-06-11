@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            z-index: 1;
+        }
+        .checkers{
+            position: absolute;
+            border: 1px solid black;
+            margin-left: 33%;
+        }
+        .black{
+            width: 52px;
+            height: 52px;
+            background-image: url('blackCol1.jpg');
+            background-size: cover;
+        }
+        .white{
+            width: 52px;
+            height: 52px;
+            background-image: url('whiteCol.jpg');
+            background-size: cover;
+        }
+        .blackCh{
+            width:47px;
+            height:47px;
+        }
+        .whiteCh{
+            width:47px;
+            height:47px;
+        }
+        #lotok1{
+            position: relative;
+            margin-left: 19%;
+            width: 141px;
+            height: 222px;
+            border: 1px solid black;
+            background: burlywood;
+            text-align: center;
+            z-index: 0;
+        }
+        #lotok2{
+            position: relative;
+            margin-left: 19%;
+            width: 141px;
+            height: 222px;
+            border: 1px solid black;
+            background: burlywood;
+            text-align: center;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+<table class="checkers">
+    <tr>
+        <td class="white"></td>
+        <td class="black"> <img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+    </tr>
+    <tr >
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+    </tr>
+    <tr>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="black.png" class="blackCh"/></td>
+    </tr>
+    <tr >
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+    </tr>
+    <tr>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+    </tr>
+    <tr >
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+    </tr>
+    <tr>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+    </tr>
+    <tr >
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+        <td class="black"><img src="white.png" class="whiteCh"/></td>
+        <td class="white"></td>
+    </tr>
+</table>
+<div id='lotki'>
+    <div id='lotok1'>
+        <div id="res1">0</div>
+    </div>
+    <div id='lotok2'>
+        <div id="res2">0</div>
+    </div>
+</div>
+<script>
+    $(document).ready(f);
+    function f() {
+        $(".whiteCh").draggable({
+                    containment: ".checkers",
+                    cursor: "painter"
+                })
+                .droppable({
+                    hoverClass: 'hover',
+                    tolerance: 'intersect',
+                    over: function (ev, ui) {
+                        var droppedOn = $(this);
+                        $(droppedOn).detach().css({top: 0, left: 0}).appendTo("#lotok2");
+                        var m = $('#res2');
+                        var n = parseInt(m.text());
+                        n = n + 1;
+                        m.text(n);
+                    }
+                });
+        $(".blackCh").draggable({
+                    containment: ".checkers",
+                    cursor: "painter"
+                })
+                .droppable({
+                    hoverClass: 'hover',
+                    tolerance: 'intersect',
+                    over: function (ev, ui) {
+                        var droppedOn = $(this);
+                        $(droppedOn).detach().css({top: 0, left: 0}).appendTo("#lotok1");
+                        var m = $('#res1');
+                        var n = parseInt(m.text());
+                        n = n + 1;
+                        m.text(n);
+                    }
+                });
+        $(".white").droppable({
+            drop: function (ev, ui) {
+                var dropped = ui.draggable;
+                $(dropped).css({top: 0, left: 0}).appendTo("parent");
+            }
+        });
+        $(".black").droppable({
+            drop: function (ev, ui) {
+                var dropped = ui.draggable;
+                var droppedOn = $(this);
+                $(dropped).css({top: 0, left: 0}).appendTo(droppedOn);
+            }
+        });
+    }
+</script>
+</body>
+</html>

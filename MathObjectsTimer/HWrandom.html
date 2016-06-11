@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<input type="button" id="ok" value="Click it!"/>
+<p id="forText"></p>
+<script>
+var arr = ["выбери красный", "выбери розовый", "выбери зеленый","выбери синий","выбери желтый","выбери серый"]
+document.getElementById("ok").onclick = function() {
+    var phrase = Math.floor(Math.random() * arr.length);
+    document.getElementById("forText").innerHTML = arr[phrase];
+}
+
+//    3. Виводити рандомні фрази з масиву за допомогою об'єкту Math.
+//    3.1 Нажаттям на кнопку виводити в тег p рандомні фрази з масиву фраз.
+</script>
+</body>
+</html>

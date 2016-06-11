@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+<meta charset="utf-8">
+</head>
+<body>
+	<script>
+	var kolvoNumbers=parseInt(prompt("Enter number"));
+	var znamen = parseInt(prompt("Enter znamenatel"));
+	function geomProgres(num, znam) {
+		var rezult = 1;
+  		for (var i = 1; i <=kolvoNumbers; i++) {
+    	rezult+= i*znamen;
+ 	}
+  	return rezult;
+	}
+	document.write("Summ of progress = "+ geomProgres(kolvoNumbers,znamen))
+	</script>
+</body>
+</html>

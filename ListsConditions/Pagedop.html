@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	
+	<p>text	</p>
+	<ul>
+	    <li> Item 1</li>
+	    <li> Item 2</li>
+	    <li> Item 3</li>
+	    <li> Item 4</li>
+	    <li> Item 5</li>
+	    
+	</ul>
+<script>
+    var list=document.body.children;
+    list[0].style.color = "red";
+    list[0].style.background = "grey";
+    //list[1].children[2].style.fontSize = "2em";
+    var ulChild=list[1].children;
+//    for(i=0;i<ulChild.length;i++) {
+//        ulChild[i].style.color = "green";
+//    }
+    ulChild[ulChild.length-1].style.background = "pink";
+	</script>
+</body>
+</html>

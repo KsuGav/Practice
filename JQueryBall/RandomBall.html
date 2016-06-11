@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: black;
+        }
+        .ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow:  1px 2px 40px #888;
+            position: relative;
+            background: violet;
+            border: 6px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var minCoor = 0;
+    var maxCoor = 600;
+    $(window).load(function() {
+        setInterval(function () {
+            var someY = (Math.round(minCoor + Math.random() * (maxCoor - minCoor)));
+            var someX = (Math.round(minCoor + Math.random() * (maxCoor - minCoor)));
+            $(".ball").animate({'top': someY + 'px', 'left': someX + 'px'},1000, "easeInOutQuad");
+            setInterval (function () {
+                var r = (Math.round(Math.random() * 255));
+                var g = (Math.round(Math.random() * 255));
+                var b = (Math.round(Math.random() * 255));
+                var rb = (Math.round(Math.random() * 255));
+                var gb = (Math.round(Math.random() * 255));
+                var bb = (Math.round(Math.random() * 255));
+                var col = "rgb(" + r + "," + g + "," + b + ")";
+                var colB = "rgb(" + rb + "," + gb + "," + bb + ")";
+                var colBorder = "6px solid " + colB;
+                var colShadow = "rgb(" + r + "," + g + "," + b + ")";
+                $('.ball').css({'border': colBorder, 'background': col, 'box-shadow': ' 1px 2px 35px' + colShadow});
+            },300);
+        }, 800);
+    })
+</script>
+<div class="ball">
+
+</div>
+</body>
+</html>

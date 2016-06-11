@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .field{
+       width: 500px;
+        height: 600px;
+        margin: auto;
+        border: 1px solid black;
+        background-image: url('space.jpg');
+        background-size: cover;
+    }
+    .looser{
+        margin-left: 72%;
+        margin-top: -20%;
+        width:150px;
+        display: none;
+    }
+    #obj{
+        position: relative;
+    }
+</style>
+<body>
+<script>
+    $(document).ready(function() {
+        var widthOffset =  $('#obj').width();
+        var countLife = 10;
+        //random coordinate
+        setInterval(function () {
+            var someY = (Math.round(Math.random() * 500));
+            var someX = (Math.round(Math.random() * (500 - widthOffset)));
+            $("#obj").animate({'top': someY + 'px', 'left': someX + 'px'});
+        },500);
+        var sec = 1;
+        var intervalID = false;
+        //timer
+        function forTick() {
+            intervalID = setInterval(tick, 1000);
+        }
+            function tick(){ //старт секундомера
+                $("#timer").text("Время: "+sec);
+                if(countLife<=0){
+                    clearInterval(intervalID);//удалить интервал
+                    intervalID = false;
+                    $('#life').text("Вы проиграли!");
+                    $('.looser').show();
+                    $('#obj').hide()
+                }else{sec++;}
+        }
+        //запустить секундомер
+$('.field').not("#obj").mouseenter (function(){
+    forTick();
+        })
+    .not("#obj").mouseleave(function(){ //остановить секундомер
+    if (intervalID) {
+        clearInterval(intervalID);//удалить интервал
+        intervalID = false;//обновить значение
+    }
+        countLife-=1;
+        $('#life').text("Количество жизней: "+countLife);
+    if(countLife<0){
+        clearInterval(intervalID);//удалить интервал
+        intervalID = false;
+        $('#life').text("Вы проиграли!");
+        $('.looser').show();
+        $('#obj').hide()
+    }
+    });
+        $('#obj').mouseover(function(){
+            if(countLife<=0) {
+                $('#life').text("Вы проиграли!");
+            }else {
+                countLife-=1;
+                $('#life').text("Количество жизней: "+countLife);
+            }
+        })
+})
+</script>
+<div id="life">Количество жизней: 10</div>
+<div id="timer">Время: 0</div>
+<div class="field">
+    <img src="NLO.jpg" id="obj" style="width: 150px"/>
+</div>
+<div><img src='NLOWin.png' class='looser'/></div>
+</body>
+</html>

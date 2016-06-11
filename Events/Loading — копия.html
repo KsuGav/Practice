@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       .phone{
+           background-image:  url('../../../../HW%20JS/HW22/Loading/iphone4.jpg');
+           background-size: cover;
+           width: 510px;
+           height: 500px;
+           margin: auto;
+       }
+        .square{
+            background: olivedrab;
+            width: 207px;
+            height: 365px;
+            position: fixed;
+            margin-top: 74px;
+            margin-left: 20px;
+            opacity:0.5;
+        }
+       .square1{
+           background: dimgrey;
+           width: 207px;
+           height: 365px;
+           position: fixed;
+           margin-top: 74px;
+           margin-left: 20px;
+           display: none;
+       }
+        #time{
+            position: fixed;
+            margin-top: 121px;
+            margin-left: 77px;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+        }
+        #one{
+            display: none;
+            position: fixed;
+            margin-top: 121px;
+            margin-left: 77px;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="square"></div>
+    <div class="square1"></div>
+    <div id="time"><h1>2</h1>minute</div>
+<div class="phone">
+</div>
+<script>
+    $(".square1").show("blind",60000,function(){
+        $("h1").html("1");
+    })
+    .hide("blind",60000);
+    $(".square").animate({
+              "opacity":1
+            },{
+                duration:60000
+            })
+   .animate({
+                "opacity":0.5
+            },{
+                duration:60000
+
+            })
+
+
+</script>
+</body>
+</html>

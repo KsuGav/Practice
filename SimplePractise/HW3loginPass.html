@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Login and Password</title>
+	<style type = "text/css">
+	body {
+		margin-right: 20%;
+		margin-left: 20%;
+		}
+	</style>
+</head>
+<body>
+	<script>
+	var questName = prompt("Введіть ім\'я", "Text");
+	if (!questName) {
+		alert("Вхід скасовано.");
+	} else if (questName == "Kseniia") { 
+		var questPassword = prompt("Ласкаво просимо, " + questName + "! Введіть пароль для входу!", "password");
+		if (questPassword == "Ksu13579") {
+			var secret=document.createElement("img");
+			var br=document.createElement("br");
+			secret.src="secret.jpg";
+			secret.width = 300;
+ 			secret.height = 300; 
+ 			document.body.appendChild(secret); 
+ 			document.body.appendChild(br);
+ 			document.write("Вітаю! Ви отримали доступ до секретної інформації!");
+		} else if (!questPassword) {
+			alert("Вхід скасовано.");
+		} else {alert("Пароль не вірний!");}
+	} else {document.write("Пробачте, я вас не знаю:(");	}
+		
+	</script>
+</body>
+</html>

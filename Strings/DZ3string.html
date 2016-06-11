@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+var enter=prompt("Enter text");
+var start=0;
+var newT =enter.split(" ");
+console.log(newT);
+for(var i=0; i<newT.length; i++) {
+    if (newT[i] == "html"){
+        start++;
+    }
+}
+alert(start);
+
+</script>
+</body>
+</html>

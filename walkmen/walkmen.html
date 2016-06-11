@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<style>
+button{
+	color: black;
+	background: -webkit-gradient(linear, 0 0, 0  100%, from(#8A2BE2), to(#DDA0DD), color-stop(0.5, #9932CC));
+	box-shadow: 0 -1px inset;
+	padding: 3px 5px;
+    border-radius: 5px;
+   border: 1px solid #666;
+}
+body{
+	background-image: url('space.jpg');
+	position: relative;
+	background-size: cover;
+}
+#man{
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+</style>
+</head>
+<body>
+	<button id="up">Вверх</button>
+<button id="down">Вниз</button>
+<button id="left">Влево</button>
+<button id="right">Вправо</button>
+
+	<img src="men.png" width="150px" height="200px" id="man"/>
+
+	
+	<script >
+	function getId(a){
+		return document.getElementById(a);
+	}  
+	var up = getId("up");
+	var down = getId("down");
+	var left = getId("left");
+	var right = getId("right");
+
+	right.onclick=function(){
+     	var right=getId("man").offsetLeft;
+    	getId("man").style.left=right+20+"px";
+    	getId("man").style.transform = "rotate("+90+"deg)";
+	}
+  	up.onclick=function(){
+     	var top=getId("man").offsetTop;
+    	getId("man").style.top=top-20+"px";
+    	getId("man").style.transform = "rotate("+0+"deg)";
+  	}
+  	down.onclick=function(){
+     	var down=getId("man").offsetTop;
+   	 	getId("man").style.top=down+20+"px";
+   	 	getId("man").style.transform = "rotate("+180+"deg)";
+  	}
+  	left.onclick=function(){
+     	var left=getId("man").offsetLeft;
+    	getId("man").style.left=left-20+"px";
+    	getId("man").style.transform = "rotate("+270+"deg)";
+	}
+	//transform: rotate(<угол>)
+	</script>
+</body>
+</html>

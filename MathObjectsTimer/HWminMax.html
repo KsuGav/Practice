@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>Максимальное или минимальное?</p>
+<input type="button" id="max" value="Max"/>
+<input type="button" id="min" value="Min"/>
+<script>
+    function getMaxOfArray(number) {
+        return Math.max.apply(null, number);
+    }
+    function getMinOfArray(number) {
+        return Math.min.apply(null, number);
+    }
+    document.getElementById("max").onclick = function() {
+        var number = [];
+        for (var i = 0; i < 5; i++) {
+            number[i] = parseInt(prompt("Enter number"));
+            if(number[i]!=number[i]*1){
+                alert("Enter a number!");
+                break
+            }else if(number[i]==""){
+                alert("Enter some number!");
+                break
+            }
+        }
+alert(getMaxOfArray(number))
+    };
+    document.getElementById("min").onclick = function() {
+        var number = [];
+        for (var i = 0; i < 5; i++) {
+            number[i] = parseInt(prompt("Enter number"));
+            if(number[i]!=number[i]*1){
+                alert("Enter a number!");
+                break
+            }else if(number[i]==""){
+                alert("Enter some number!");
+                break
+            }
+        }
+        alert(getMinOfArray(number))
+    }
+//    2. Вивести максимальне чи мінімальне число серед п'яти введених чисел за допомогою об'єкту Math.
+//    2.1 Користувач тисне на кнопку виводити мінімальне, і йому пропонується ввести 5 полів з числами.
+//    2.2 Вивести максимальне число алертом.
+//    2.3 Аналогічно для максимального числа.
+//    2.4 Додатково зробіть доступну валідацію
+</script>
+</body>
+</html>

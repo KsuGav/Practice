@@ -1,0 +1,83 @@
+<! DOCTYPE html>
+<html>
+<head>
+ <title> Cenzor</title>
+	  <meta charset="UTF-8">
+	<style>
+	textarea{
+		width: 340px;
+		height: 220px;
+		margin-left: 15px;
+	}
+	input{
+		margin: 15px;
+	}
+	h2{
+		margin: auto;
+	}
+	#main{
+		margin: auto;
+		width:380px;
+		height:360px;
+		border:2px solid black;
+		background: gainsboro;
+		font-weight: bold;
+	}
+	#words{
+		color: crimson ;
+		margin-left:20px;
+	}
+	</style>
+</head>
+<body>
+	<div id = "main">
+		<h2>Список запрещенных слов:</h2>
+		<div id = "words">слово1 слово2 слово3</div>
+		<form name = "form1">
+			<input type = "text" id = "addWord">
+			<input type = "button" id = "butForSave" value = "Сохранить"><br>
+			<textarea id = "enterText"></textarea><br>
+			<input type = "button" id = "butCenzor" value = "Цензор">
+		</form>
+	</div>
+	<script>
+		function getId(a){
+			return document.getElementById(a);
+		}
+		var f1 = document.forms.form1;
+		getId("butForSave").onclick = function(){
+			if(getId("addWord").value != ""){
+				getId("words").innerHTML += " " + getId("addWord").value;
+				getId("addWord").value = "";
+			}
+		}
+		getId("butCenzor").onclick = function(){
+			var forText = getId("enterText").value;
+			var badStr = getId("words").innerHTML;
+			var newText=forText.split(" ");
+			var arrayBad=badStr.split(" ");
+			var str = "";
+			for(var k = 0; k < badStr.length;k++){
+				if(badStr.charAt(k) != " "){
+					str +="*";
+				}
+				else{
+					str += " ";
+				}
+			}
+			var arrayStr=str.split(" ");
+			for(var i = 0; i < newText.length;i++){
+				for(var j = 0; j < arrayBad.length;j++){
+					if(newText[i] == arrayBad[j]){
+						newText.splice(i,1,arrayStr[j]);
+					}	
+				}	
+			}
+			getId("enterText").value = "";
+			for(var c = 0; c < newText.length;c++){
+				getId("enterText").value += newText[c] + " ";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>Введите число, для вычисления корня:</p>
+<input type="text" id="text"/>
+<input type="button" id="calc" value="Submit"/>
+<script>
+    document.getElementById("calc").onclick = function(){
+        var k = parseInt(document.getElementById("text").value);
+        if(k!=k*1){
+            alert("Please, enter a number!")
+        }else if(k==""){
+            alert("Enter some number")
+        }else if(k<0) {
+            alert("Only positive number")
+        }else{
+                var square = Math.sqrt(k);
+                alert(square)
+            }
+        }
+//    1. Знайти корінь числа введеного користувачем в поле тексту.
+//    1.1 Провалідувати поле, якщо не користувач не ввів нічого.
+//    1.2.Провалідувати поле на від'ємні значення.
+//    1.3. Провалідувати поле на букви.
+//    1.4. Вивести корінь числа за допомогою об'єкту Math.
+</script>
+</body>
+</html>

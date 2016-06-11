@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+<meta charset="utf-8">
+</head>
+<body>
+    <script>
+	var fibon1=1; //переменная первого числа
+	var fibon2=1; //переменная второго числа
+	var n=11; //кол-во необходимых чисел 
+	var i=3; //начало цикла
+	document.write("Последовательность Фибоначчи "+fibon1+" "+fibon2+" ");
+	do { i++;
+		var fibon3=fibon1+fibon2; //формула последовательности, сумма предыдущих чисел
+		fibon1=fibon2; //присваиваем следующее число
+		fibon2=fibon3; //присваиваем следующее число
+		document.write(fibon3+" ");
+	}
+	while(i<=n)   	
+</script>
+</body>
+</html>
+
+

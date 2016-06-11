@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+<meta charset="utf-8">
+</head>
+<body>
+    <script>
+	var number1=parseInt(prompt("number1",""));
+	var number2=parseInt(prompt("number2",""));
+	var s = " ";
+	function diapazonSimple(num1,num2) {
+		if (number1<number2) {
+			for (var i=number1;i<=number2; i++) {
+				if((i%2)==0) continue;
+            	else{s+=i+" " }
+			}
+		}else {for (var i=number2;i<=number1; i++) {
+				if((i%2)==0) continue;
+            	else{s+=i+" " }
+			}
+		}
+		return s
+	} 
+	diapazonSimple(number1,number2);
+	alert(s)
+
+    	//Потрібно написати функцію, в яку передається 2 параметри, які користувач вводить через вікно prompt(). Потрібно щоб функція виводила діапазон тільки простих чисел вікном alert(), між тими які ввів користувач.
+</script>
+</body>
+</html>

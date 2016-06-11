@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border:1px solid black;
+            width: 400px;
+            height:300px;
+            margin: auto;
+        }
+        textarea{
+            width: 350px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3>Список запрещенных слов: </h3>
+    <p id="array"> </p>
+    <form name="form1">
+    <input type="text" id="addWord"/>
+    <input type="button" id="butForSave" value="Сохранить"/>
+    <textarea id="enterText" name="enterText"></textarea>
+    <input type="button" name="butCenzor" value="Цензор"/>
+    </form>
+</div>
+
+<script>
+    function getId(a) {
+        return document.getElementById(a);
+    }
+
+    var arrayCenz = ["слово1", "слово2", "слово3"];
+    var forAddWord = getId("addWord");
+    var array = getId("array");
+    array.innerText = arrayCenz;
+    getId("butForSave").onclick = function(){
+       arrayCenz.push(forAddWord.value);
+        array.innerText = arrayCenz;
+    };
+    var str = array.innerText;
+    var arr = str.split(" ");
+    var str1 = getId("enterText").value;
+    for(var i=0;i<arr.length;i++){
+        var n=arr[i].length;
+        var z="";
+        for( var j=0;j<n;j++){
+            z+="*";
+        }
+        var arr1=str1.split(" ");
+        var start=0;
+        while(true){
+            var rez=arr1.indexOff(arr[i],start);
+            if(rez==-1)break
+        }
+    }
+    arr1.splice(rez,1,z);
+    str1=arr1.join(" ");
+    getId("enterText").value=str1;
+    start=rez;
+
+//    var main = document.forms.form1;
+//    main.elements.butCenzor.onclick = function(){
+//        var forText = main.elements.enterText.value;
+//        var arrayBad = array.innerText;
+//        var arr_forText = forText.split(" ");
+//        var counter = "";
+//        for(var i=0;i<arrayBad.length;i++){
+//            if(arrayBad.charAt(i)!=" "){
+//                counter+="*";
+//            }else{
+//                counter+=" ";
+//            }
+//        }
+//        var arr_counter = counter.split(" ");
+//        for(var j=0;j<arr_forText.length;i++){
+//            for(var c=0;c<arrayBad.length;c++){
+//                if(arr_forText[j]==arrayBad[c]){
+//                    arr_forText.splice(j,1,arr_counter[c]);
+//                }
+//            }
+//        }
+//        main.elements.enterText.value = "";
+//        for(var k=0;k<arr_forText.length;k++){
+//            main.elements.enterText.value+=arr_forText[k]+" ";
+//        }
+//    }
+
+//    getId("butCenzor").onclick = function(){
+////        str.replace(array,"*")
+////        split(search).join(replace)
+//        function censor(){
+//            var text = str.split(" ");
+//            for(i=0;i<str.length;i++){
+//                for(j=0;j<array.length;j++){
+//                    var word = array[j];
+//                    if(text[i]==word[j]){
+//                        text[i].replace(text[i].length,"*")//*word.length;
+//                    }
+//                }
+//            }
+//
+//        }
+//        function censor();
+//    }
+
+//RegEx 
+    //стр = п.иннерхтмл
+//    арр =стр на сплит разбиваем
+//    стр1 = валюе тексареа
+//    фор именьше арр.ленгс
+//    н=арр итое.ленгс
+//    з=""
+//    фор дж меньше н
+//    з+=*
+//        арр1=стр1.сплит
+//    старт =0 
+//    вайл тру
+//    рез=арр2.индексОфф(арр итое,старт)
+//    иф рез== -1
+//    брейк
+//    
+//    арр2.сплайс(рез,1,з)
+//    стр2 = арр2.джоин(" ")
+//    текстаре = стр2
+//        старт =рез =1
+    
+
+</script>
+</body>
+</html>

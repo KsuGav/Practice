@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+<meta charset="utf-8">
+</head>
+<body>
+	<script>
+	var n=parseInt(prompt("Enter number"));
+	var q = parseInt(prompt("Enter znamenatel"));
+	var i=1;
+	function fprog(n,q){
+	if (n==1)return 1;
+	return i+q*fprog(n-1,q);
+}
+document.write(fprog(n,q))
+
+	</script>
+</body>
+</html>
+

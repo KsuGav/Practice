@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Урок 6. Пример объектно-ориентированного подхода.</title>
+	<meta charset="utf-8">
+</head>
+<style>
+	body{
+		background: url('bg.jpg');
+		background-size: cover;
+	}
+	label{
+		display: none;
+		margin-bottom: 25px;
+		margin-right: 25px;
+	}
+	.radBut{
+		display: inline;
+	}
+#main {
+	position:relative;
+	margin: auto;
+	padding: 5px;
+	width: 705px;
+	height:425px;
+	background-color: olivedrab;
+	border: 1px solid black;
+	border-radius:10px;
+}
+#scr {
+	margin:auto;
+	width: 700px;
+	height: 420px;
+	background: darkgrey;
+	background-size:cover;
+	border: 1px solid black;
+	border-radius:10px;
+	/*transition: opacity 1000ms linear;*/
+}
+.button {
+	position: absolute;
+	top: 200px;
+	width: 30px;
+	height: 30px;
+	font: 12pt arial,tahoma,sans-serif;
+	text-align: center;
+	border-radius:50px;
+	opacity: 0.5;
+}
+.button2{
+	position: absolute;
+	bottom: 10px;
+	left: 13px;
+	border-radius: 15px;
+	opacity: 0.9;
+}
+#radios{
+	position: absolute;
+	left: 40%;
+	bottom: 20px;
+	opacity: 0.8;
+}
+#butForPause{
+	display: none;
+}
+#left {
+	left:10px;
+}
+#right {
+	right:10px;
+}
+</style>
+
+<body>
+<div id="main">
+	<input type = "button" class="button" id="left" value="<"/>
+	<div id="scr"></div>
+	<input type = "button" class="button" id="right" value=">">
+	<input type="button" class="button2" id="butForShow" value="Show"/>
+	<input type="button" class="button2" id="butForPause" value="Pause"/>
+	<form id="radios" name="radios">
+		<input type="radio" id="ch01.jpg" name="forImg" class="radBut"/>
+		<label class="labImg"><img src="ch01.jpg" width="100"/></label>
+		<input type="radio" id="ch02.jpg" name="forImg" class="radBut"/>
+		<label class="labImg"><img src="ch02.jpg" width="100"/></label>
+		<input type="radio" id="ch03.jpg" name="forImg" class="radBut"/>
+		<label class="labImg"><img src="ch03.jpg" width="100"/></label>
+		<input type="radio" id="ch04.jpg" name="forImg" class="radBut"/>
+		<label class="labImg"><img src="ch04.jpg" width="100"/></label>
+		<input type="radio" id="ch05.jpg" name="forImg" class="radBut"/>
+		<label class="labImg"><img src="ch05.jpg" width="100"/></label>
+	</form>
+</div>
+<script>
+	function getId(a) {
+		return document.getElementById(a);
+	}
+	var slider = {
+		slides:['ch01.jpg','ch02.jpg','ch03.jpg','ch04.jpg','ch05.jpg'],
+		// текущий кадр для отбражения - индекс картинки из массива
+		frame:0,
+		// установка нужного фона слайдеру
+		fon: function(image) {
+			getId("scr").style.backgroundImage = "url("+image+")";
+			getId(image).checked = true;
+		},
+		// запуск слайдера с картинкой с нулевым индексом
+		init: function() {
+			this.fon(this.slides[this.frame]);
+		},
+		// крутим на один кадр влево
+		left: function() {
+			this.frame--;
+			if(this.frame < 0) this.frame = this.slides.length-1;
+			this.fon(this.slides[this.frame]);
+		},
+		// крутим на один кадр вправо
+		right: function() {
+			this.frame++;
+			if(this.frame == this.slides.length) this.frame = 0;
+			this.fon(this.slides[this.frame]);
+		}
+	};
+	//установка первой картинки при загрузке страницы
+	window.onload = function() { // запуск слайдера после загрузки документа
+		slider.init()
+	}
+	// запуск слайдера
+	var show = getId("butForShow");
+	var pause = getId("butForPause");
+	var t;
+	show.onclick = function() {
+		pause.style.display = "block";
+		show.style.display = "none";
+		slider.init();
+		t = setInterval(function() {
+			slider.right();
+		},3000);
+	};
+	pause.onclick = function() {
+		pause.style.display = "none";
+		show.style.display = "block";
+		clearInterval(t);
+	};
+	//слайд по кнопкам
+	getId("left").onclick = function(){
+		slider.left();
+	};
+	getId("right").onclick = function(){
+		slider.right();
+	};
+	var buts = document.getElementsByClassName("button");
+	for(var i=0;i<buts.length;i++){
+		buts[i].onmouseover = function () {
+			this.style.opacity = "0.9";
+		};
+		buts[i].onmouseout = function () {
+			this.style.opacity = "0.5";
+		}
+	}
+	//пролистывать слайдер с помощью радиобатонов
+	var form = document.forms.radios;
+	for(var j=0;j<form.length;j++){
+		form.elements[j].onclick = function(){
+			getId("scr").style.backgroundImage = "url("+this.id+")";
+		}
+	};
+	//предпросмотр при наведении на радиобаттн
+//	for(var c=0;c<form.length;c++) {
+//		form.elements[c].onmouseover = function () {
+//			console.log(this)
+//			document.getElementsByClassName("labImg")[c].style.display = "block";
+////		form.elements[c].onmouseout = function(){
+////
+////		}
+//		}
+//	}
+
+
+</script>
+</body>
+</html>

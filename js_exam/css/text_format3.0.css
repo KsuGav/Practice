@@ -1,0 +1,190 @@
+header{
+    background-color:cadetblue;
+    color: white ;
+    text-align:center;
+    padding:5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+button{
+    width: 100px;
+    border-radius: 15px;
+}
+table {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-spacing: 1px;
+}
+td {
+    border: 1px solid black;
+}
+textarea{
+    width: inherit;
+    height: inherit;
+}
+.file{
+    overflow:hidden;
+
+    position: relative;
+    display: inline-block;
+}
+.cell {
+    background-size: cover;
+}
+.forDisplay{
+    display: inline;
+}
+.forDisp{
+    display: block;
+}
+.lf{
+    display: inline-block;
+    margin: 14px -10px 8px 7px;
+    width: 185px;
+}
+.rt{
+    display: inline-block;
+    vertical-align: top;
+    margin: 14px 3px -5px 33px;
+    width: 198px;
+}
+.confirm{
+    display: run-in;
+    margin: 30px;
+    padding-left: 46px;
+}
+.divTab{
+    width: 200px;
+    height:200px;
+    float: left;
+}
+.forTextArea {
+    width: 35px;
+    font-size: 14px;
+    border-radius: 28px;
+    display: inline;
+    float: right;
+    margin-top: 7px;
+}
+.butForTab{
+    margin:auto;
+}
+.forTab{
+    display: inline;
+    font-size: 17px;
+    line-height: 2;
+}
+.forList{
+    margin: 15px;
+}
+#numList{
+    float: inherit;
+}
+#forButtons{
+    overflow: auto;
+}
+#dvtext{
+    margin-top: 40px;
+}
+#tabColor {
+    border: 3px solid black;
+    width: inherit;
+    height: inherit;
+}
+#tabImg {
+    border: 3px solid black;
+    width: inherit;
+}
+#radioList{
+    font-size: 16px;
+}
+#butSaveTab, #butSaveList{
+    margin-right: 34px;
+}
+#changeBGCol{
+    margin-left: 25%;
+}
+#parent_popup {
+    display: none;
+    background: darkgrey;
+    height: 100%;
+    opacity: 0.7;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+#popup {
+    display: none;
+    z-index: 999;
+    background-color: aliceblue ;
+    height: 225px;
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    width: 225px;
+    opacity: 1;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+#popup2 {
+    display: none;
+    z-index: 999;
+    background-color: aliceblue ;
+    height: 270px;
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    width: 223px;
+    opacity: 1;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+#changeBGImg{
+    display:none;
+    margin-left: 25%;
+}
+#forEditButtons{
+    display:none;
+}
+#dvredact {
+    display: none;
+    margin-top: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+}
+#popupTab{
+    display:none;
+    z-index: 999;
+    background-color: aliceblue ;
+    height: 256px;
+    position: fixed;
+    top: 100px;
+    left: 35%;
+    width: 435px;
+    opacity: 1;
+    font-size: 12px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+#popupList{
+    display:none;
+    z-index: 999;
+    background-color: aliceblue ;
+    height: 260px;
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    width: 388px;
+    opacity: 1;
+    font-size: 12px;
+    border: 2px solid black;
+    border-radius: 15px;
+}

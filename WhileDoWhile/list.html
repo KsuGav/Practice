@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> </title>
+<meta charset="utf-8">
+</head>
+<body>
+    <script>
+      var list = prompt("ul or ol?");
+      var count = prompt("Count of elements?");
+      var type = prompt("Type of marks?");
+      
+      var i = 1;
+      document.write("<"+list+" type="+type+">");
+      do {i++
+            var text = prompt("Text"," ");
+            document.write("<li>"+text+"</li>");
+        }
+        while(i<=count);
+        document.write("</"+list+">");
+        
+        
+        
+    
+</script>
+</body>
+</html>
+

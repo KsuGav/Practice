@@ -1,0 +1,190 @@
+/*general*/
+html, body { 
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: "Times New Roman";
+    background: #affea3;
+}
+main{
+    height: 100%;
+}
+p{
+    padding:5px 0;
+    display: inline-block;
+}
+ol {
+    padding-left: 50px;
+}
+label{
+    display: inline;
+}
+table{
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin: auto;
+}
+/*Inputs*/
+button,
+input[type="button"],
+input[type="reset"],
+select {
+    background: #dcf2c0;
+    border: 3px solid #8fcb7a;
+    border-radius: 10px;
+    color: #163319;
+    margin: 5px;
+    padding: 2px;
+    box-shadow: 2px 2px 5px #368945;
+    font-size: 14px;
+    width: 100px;
+}
+input[type="button"]:hover,
+input[type="reset"]:hover,
+select:hover{
+    background: rgb(153, 221, 123);
+}
+input[type="text"]{
+    background: #dcf2c0;
+    width:50px;
+    border-radius: 5px;
+    margin-right: 15px;
+    text-align: center;
+    border:  2px solid #8fcb7a;
+}
+/*header*/
+header{
+    background: #affea3;
+    background: -webkit-linear-gradient(to top, #affea3, #e6e3cd, #affea3);
+    background: -o-linear-gradient(to top, #affea3, #e6e3cd, #affea3);
+    background: linear-gradient(to top, #affea3, #e6e3cd, #affea3);
+    background-size:auto 92px;
+    padding: 20px 0;
+}
+header form{
+    display: inline-block;
+}
+header section{
+    margin: 0 auto;
+    max-width: 1095px;
+}
+/*buttons for text styling*/
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-style: italic;
+}
+.underline{
+    text-decoration: underline;
+}
+/*main sections*/
+section#text,
+section#editor {
+    margin: 0 5px;
+    min-height: 100%;
+    padding: 15px 50px;
+    border:2px groove gray;
+    background: #fff no-repeat center center/cover;
+}
+section#editPannel,
+section#editor{
+    display: none;
+}
+section#editPannel{
+    width:350px;
+}
+section#editor textarea{
+    resize: none;
+    padding: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 680px;
+}
+/*Блокування контенту позаду вспливаючого вікна*/
+div#toBlockBg{
+    display: none;
+    background: #000;
+    height: 100%;
+    opacity: 0.4;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+/*Вспливаючі вікна */
+article#colorTab,
+article#imageTab,
+article#createTabPannel,
+article#createListPannel{
+    display: none;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px #393030;
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    padding: 10px;
+    z-index: 1000;
+}
+/*table with images*/
+article#imageTab{
+    width: 400px;
+    height: 320px;
+}
+article#imageTab table{
+    width: 360px;
+    height: 210px;
+}
+article#imageTab table td{
+    background-size: 100%;
+}
+article#colorTab input[type="button"],
+article#imageTab input[type="button"]{
+    width:150px;
+    margin-left:25px;
+}
+/*create table/list window*/
+article#createTabPannel,
+article#createListPannel{ 
+    width: auto;
+    padding: 15px;
+}
+/*2 колонки в формі*/
+div.column{
+    float: left;
+    width: 195px;
+}
+/*вирівняти інпути в стовпчик*/
+div.column label{
+    float: left;
+}
+.field {
+    clear:both; 
+    text-align:right;
+    margin-bottom: 6px;
+}
+.buttons {
+    clear:both;
+}
+.buttons input:first-child{
+    margin-left: 35px;
+}
+.buttons input:nth-child(2){
+    margin-left: 90px;
+}
+/*create list block*/
+article#createListPannel p,
+article#createListPannel label:first-of-type{
+    display: inline-block;
+}
+article#createListPannel label{
+    display: block;
+    margin-bottom: 10px;
+}
+

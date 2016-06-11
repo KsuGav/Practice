@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Години</title>
+	<meta charset="utf-8">
+	</head>
+<body>
+	<script>
+	var numberMonth = prompt("Введіть годину!", "1-24");
+		if ((numberMonth>6)&&(numberMonth<=11)) {
+			alert("Ранок!");
+ 		} else if ((numberMonth>11)&&(numberMonth<=18)) {
+			alert("День!");
+		} else if ((numberMonth>18)&&(numberMonth<=21)) {
+			alert("Вечір!");
+		} else if ((numberMonth>21)&&(numberMonth<=23) || (numberMonth>=0)&&(numberMonth<=6)) {
+			alert("Ніч!");
+		} else { alert("Некоректні дані! Існує лише 24 години!");
+				alert(numberMonth = prompt("Введіть годину!", "1-24"));
+	}
+	</script>
+</body>
+</html>

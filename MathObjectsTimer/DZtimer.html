@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="timer"></div>
+<button id="redact">Установить</button>
+<button id="start">Старт</button>
+<button id="pause">Пауза</button>
+
+<script>
+    function getId(a) {
+        return document.getElementById(a);
+    }
+
+    var intervalID = false;
+    var sec_num = 60;
+
+    function convertAndShow() {
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        getId("timer").innerHTML = hours + " : " + minutes + " : " + seconds;
+    }
+    convertAndShow();//рассчитать и показать таймер по умолчанию (60сек)
+
+    function forStart() {if (intervalID==false) {
+        intervalID = setInterval(start, 1000);
+    }
+        function start() {
+            convertAndShow();//обновить таймер до рассчетов
+            if (sec_num==0) {//если досчитали до нуля
+                clearInterval(intervalID);//удалить интервал
+                intervalID = false;//обновить значение переменной
+                alert('Время истекло');
+            } else {
+                sec_num--;//уменьшить кол-во заданых секунд на 1
+            }
+            convertAndShow();// и после рассчетов
+        }
+    }
+    getId("start").onclick = function () {
+        forStart();//запустить счетчик
+    };
+
+    getId("pause").onclick = function () { //for pause
+        if (intervalID) {
+            clearInterval(intervalID);//удалить интервал
+            intervalID = false;//обновить значение
+        }
+    };
+    getId("redact").onclick = function () {
+        sec_num = parseInt(prompt('Enter seconds'));
+        convertAndShow();
+    };
+
+</script>
+
+</body>
+</html>

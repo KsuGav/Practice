@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-git.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/text_format3.0.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main">
+<header>
+    <div id="forButtons">
+        <button id="redact">EDIT</button>
+        <button id="fontWeight" name="font-weight">B</button>
+        <button id="fontStyle" name="font-style">I</button>
+        <button id="textDecoration" name="text-decoration">U</button>
+        <form id="radioBtn" class="forDisplay" onchange="setStyle(this)" name="font-size">
+            <select>
+                <option id="text_size7" value="7pt">7pt</option>
+                <option id="text_size8" value="8pt">8pt</option>
+                <option id="text_size9" value="9pt">9pt</option>
+                <option id="text_size10" value="10pt">10pt</option>
+                <option id="text_size11" value="11pt">11pt</option>
+                <option id="text_size12" value="12pt">12pt</option>
+                <option id="text_size14" value="14pt">14pt</option>
+                <option id="text_size16" value="16pt">16pt</option>
+                <option id="text_size18" value="18pt">18pt</option>
+                <option id="text_size20" value="20pt">20pt</option>
+                <option id="text_size30" value="30pt">30pt</option>
+                <option id="text_size40" value="40pt">40pt</option>
+            </select>
+        </form>
+        <form id='formFont' class="forDisplay" onchange="setStyle(this)" name="font-family">
+            <select id="fontFam" name='fontFam'>
+                <option id="textf_times" value="Times">Times</option>
+                <option id="textf_arial" value="Arial">Arial</option>
+                <option id="textf_tahoma" value="Tahoma">Tahoma</option>
+                <option id="textf_verdana" value="Verdana">Verdana</option>
+                <option id="textf_georgia" value="Georgia">Georgia</option>
+                <option id="textf_impact" value="Impact">Impact</option>
+                <option id="textf_comic" value="Comic Sans MS">Comic Sans MS</option>
+                <option id="textf_trebuchet" value="Trebuchet MS">Trebuchet MS</option>
+            </select>
+        </form>
+        <button id="colorText">Color</button>
+        <button id="colorFon">Background</button>
+        <form id="radioBtn2" class="forDisplay" onchange="setStyle(this)" name="radioBtn2">
+            <label><input type="radio" id="left" name="text-align">
+                left</label>
+            <label><input type="radio" id="center" name="text-align">
+                center</label>
+            <label><input type="radio" id="right" name="text-align">
+                right</label>
+        </form>
+    </div>
+    <div id="forEditButtons">
+        <button id="save">Сохранить</button>
+        <button id="addTab" class="TabOrList">Таблица</button>
+        <button id="addList" class="TabOrList">Список</button>
+    </div>
+    </header>
+    <div class="divs" id="dvtext">
+        <p>Создай свою планету! </p>
+
+        <p>1) С помощью редактора выбери любую планету </p>
+
+        <p>2) Опиши ее характеристику и придумай название</p>
+
+        <p>3) Сохрани, чтобы маленький Принц посетил ее! </p>
+        </div>
+</div>
+<div class="divs" id="dvredact">
+    <textarea id="textCode" rows="3" cols="10"></textarea>
+</div>
+<div id="parent_popup">
+    <div id="popup">
+        <button id="changeBGImg">Bg img</button>
+<table id="tabColor" class="forHide">
+    <tr>
+        <td class="cellC" style="background: lightcoral"></td>
+        <td class="cellC" style="background: turquoise"></td>
+        <td class="cellC" style="background: gold"></td>
+    </tr>
+    <tr>
+        <td class="cellC" style="background: greenyellow"></td>
+        <td class="cellC" style="background: yellow"></td>
+        <td class="cellC" style="background: navajowhite"></td>
+    </tr>
+    <tr>
+        <td class="cellC" style="background: darkred"></td>
+        <td class="cellC" style="background: darkblue"></td>
+        <td class="cellC" style="background: orchid"></td>
+    </tr>
+</table>
+        </div>
+    <div id="popup2">
+        <button id="changeBGCol">Bg color</button>
+<table id="tabImg" class="forHide">
+    <tr>
+        <td class="cell" style="background-image: url(img/planet11.jpg)"></td>
+        <td class="cell" style="background-image: url(img/planet21.jpg)"></td>
+        <td class="cell" style="background-image: url(img/planet31.jpg)"></td>
+    </tr>
+    <tr>
+        <td class="cell" style="background-image: url(img/planet41.jpg)"></td>
+        <td class="cell" style="background-image: url(img/planet51.jpg)"></td>
+        <td class="cell" style="background-image: url(img/planet61.jpg)"></td>
+    </tr>
+    <tr>
+        <td class="cell" style="background-image: url(img/planet71.jpg)"></td>
+        <td class="cell" style="background-image: url(img/planet81.png)"></td>
+        <td class="cell" style="background-image: url(img/planet91.jpg)"></td>
+    </tr>
+</table>
+        <label>Загрузить файл:
+        <input type="file" class="file" value="Выбрать" accept="image/*">
+        </label>
+    </div>
+    <div id="popupTab" class="forHide forDisp">
+        <div class="lf">
+            <div class="forTab">Количество рядков: <input type="text" id="numRows" class="forTextArea validation"></div>
+            <div class="forTab">Ширина: <input type="text" id="widthCol" class="forTextArea validation"></div>
+            <div class="forTab">Cellspasing:<input type="text" id="cellspas" class="forTextArea validation"></div>
+            <div class="forTab">Толщина рамки: <input type="text" id="borderTab" class="forTextArea validation"></div>
+        </div>
+        <div class="rt">
+            <div class="forTab">Количество столбцов: <input type="text" id="numCol" class="forTextArea validation"></div>
+            <div class="forTab">Высота: <input type="text" id="heightCol" class="forTextArea validation"></div>
+            <div class="forTab"><p>Цвет рамки: <input type="text" id="BGCol" class="forTextArea"></p></div>
+        </div>
+        <div class="confirm">
+            <button class="butForTab" id="butSaveTab">Сохранить</button>
+            <button class="butForTab" id="butBrakeTab">Отмена</button></div>
+    </div>
+    <div id="popupList" class="forHide forDisp">
+        <h2 class="forList">Тип списка: </h2>
+        <form class="forList" id="radioList">
+            <label>Нумерованый: <input type="radio" name="radioList" id="checkForNum" value="num"></label>
+        </form>
+        <div class="forList" id="radioList2">
+            <p class="forTab">Тип маркировки списка:</p>
+            <form  id='formTypeMark' class="forTab" name="formTypeMark">
+
+                <select id="typeNMark" name='typeNMark'>
+                    <option value="A">A</option>
+                    <option value="a">a</option>
+                    <option value="I">I</option>
+                    <option value="i">i</option>
+                    <option value="1">1</option>
+                </select>
+
+            </form>
+        </div>
+        <div class="forList" id="radioList3">
+            <p class="forTab">Кол-во элементов списка:</p>
+            <input type="text" id="numList" class="forTextArea validation"/>
+        </div>
+        <div class="confirm">
+            <button class="butForTab" id="butSaveList">Сохранить</button>
+            <button class="butForTab" id="butBrakeList">Отмена</button>
+        </div>
+</div>
+    </div>
+<script src="js/script3.0.js">
+</script>
+</body>
+</html>

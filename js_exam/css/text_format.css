@@ -1,0 +1,158 @@
+body {
+    font-size: 18px;
+    font-family: monospace;
+    background-image: url('../img/bg1.jpg');
+    background-size: cover;
+}
+table {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-spacing: 1px;
+}
+
+td {
+    border: 1px solid black;
+}
+
+h4 {
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+button{
+    font-size: 14px;
+    border-radius: 28px;
+    box-shadow: 10px 1px 14px -7px;
+    background: cornflowerblue;
+    color: black;
+}
+
+select{
+    border-radius: 15px;
+    background: lightblue;
+}
+.warn{
+    display: inline;
+    color: red;
+    font-size: 12px;
+}
+.divs {
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    background: thistle;
+    opacity: 0.8;
+}
+
+.cell {
+    background-size: cover;
+}
+
+.forTextArea {
+    width: 35px;
+    font-size: 14px;
+    border-radius: 28px;
+}
+.forDisplay{
+    display: block;
+}
+.forTab {
+    display: inline;
+    font-size: 12px;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#main {
+    margin: auto;
+}
+
+#dvtext {
+    padding-left: 32px;
+    overflow: scroll;
+    background-size: cover;
+}
+
+#textCode {
+    width: 460px;
+    height: 300px;
+    resize: none;
+    margin: 30px 0 0 0;
+}
+
+#dvbutton {
+   margin-left: 40%;
+}
+
+#dvredact {
+    display: none;
+    padding-left: 30px;
+}
+
+#dvstyle {
+    display: none;
+    padding-left: 30px;
+}
+
+#tabColor {
+    border: 3px solid black;
+    display: none;
+}
+
+#tabImg {
+    border: 3px solid black;
+    display: none;
+    margin-left: 100px;
+}
+
+#newTab {
+    display: none;
+}
+
+#adding {
+    display: none;
+}
+
+#divAddTabLi {
+    display: none;
+}
+
+#forNewTabLi {
+    display: none;
+}
+
+#forTab {
+    display: none;
+}
+
+#forList {
+    display: none;
+}
+
+#formTabOrList {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#butSaveTab, #butSaveList{
+    margin-left: 195px;
+    margin-top: 20px;
+}
+
+#colorText, #colorFon{
+    margin-top: 20px;
+}
+#typeMMark, #typeNMark{
+    margin-left: 35px;
+    margin-top: 10px;
+    display: none;
+}
+#radioList2, #radioList3{
+    display: none;
+}
+form{
+    display: block;
+}

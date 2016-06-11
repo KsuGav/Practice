@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-git.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/text_format.css">
+    <meta charset="utf-8"/>
+    <title>Title</title>
+</head>
+
+<body>
+<div id="main">
+    <div class="divs" id="dvtext">
+        <p>Создай свою планету! </p>
+
+        <p>1) С помощью редактора выбери любую планету </p>
+
+        <p>2) Опиши ее характеристику и придумай название</p>
+
+        <p>3) Сохрани, чтобы маленький Принц посетил ее! </p>
+    </div>
+    <div id="dvbutton">
+        <button id="redact">Редактировать</button>
+        <button id="styling">Стилизировать</button>
+    </div>
+    <div class="divs" id="dvredact">
+        <textarea id="textCode" rows="3" cols="10"></textarea>
+        <button id="save">Сохранить</button>
+        <button id="add">Добавить</button>
+    </div>
+    <div class="divs" id="dvstyle">
+
+        <p>Размер текста:</p>
+
+        <form id="radioBtn" onchange="setStyle(this)" name="radioBtn">
+            <label><input type="radio" id="text_size12" name="font-size">
+                12pt</label>
+            <label><input type="radio" id="text_size14" name="font-size">
+                14pt</label>
+            <label><input type="radio" id="text_size16" name="font-size">
+                16pt</label>
+            <label><input type="radio" id="text_size18" name="font-size">
+                18pt</label>
+            <label><input type="radio" id="text_size20" name="font-size">
+                20pt</label>
+        </form>
+
+        <p>Лигатура</p>
+
+        <form id='formFont' onchange="setStyle(this)" name="font-family">
+            <select id="fontFam" name='fontFam'>
+                <option id="textf_times" value="Times">Times</option>
+                <option id="textf_arial" value="Arial">Arial</option>
+                <option id="textf_tahoma" value="Tahoma">Tahoma</option>
+                <option id="textf_verdana" value="Verdana">Verdana</option>
+            </select>
+        </form>
+        <form name="formStyle">
+            <label><input type="checkbox" id="fontWeight" name="font-weight">
+                Жирний текст</label>
+            <label><input type="checkbox" id="fontStyle" name="font-style">
+                Курсивний текст</label>
+        </form>
+
+        <button id="colorText">Цвет текста</button>
+        <button id="colorFon">Цвет фона</button>
+        <table id="tabColor" class="forHide">
+            <tr>
+                <td class="cellC" style="background: lightcoral"></td>
+                <td class="cellC" style="background: turquoise"></td>
+                <td class="cellC" style="background: gold"></td>
+            </tr>
+            <tr>
+                <td class="cellC" style="background: greenyellow"></td>
+                <td class="cellC" style="background: yellow"></td>
+                <td class="cellC" style="background: navajowhite"></td>
+            </tr>
+            <tr>
+                <td class="cellC" style="background: darkred"></td>
+                <td class="cellC" style="background: darkblue"></td>
+                <td class="cellC" style="background: orchid"></td>
+            </tr>
+        </table>
+        <table id="tabImg" class="forHide">
+            <tr>
+                <td class="cell" style="background-image: url(img/planet11.jpg)"></td>
+                <td class="cell" style="background-image: url(img/planet21.jpg)"></td>
+                <td class="cell" style="background-image: url(img/planet31.jpg)"></td>
+            </tr>
+            <tr>
+                <td class="cell" style="background-image: url(img/planet41.jpg)"></td>
+                <td class="cell" style="background-image: url(img/planet51.jpg)"></td>
+                <td class="cell" style="background-image: url(img/planet61.jpg)"></td>
+            </tr>
+            <tr>
+                <td class="cell" style="background-image: url(img/planet71.jpg)"></td>
+                <td class="cell" style="background-image: url(img/planet81.png)"></td>
+                <td class="cell" style="background-image: url(img/planet91.jpg)"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="divs" id="adding">
+    <div>
+        <form name="formTabOrList" id="formTabOrList">
+            <label><input type="radio" id="addTab" class="TabOrList" name="chooseAdd"/>Таблицу</label>
+            <label><input type="radio" id="addList" class="TabOrList" name="chooseAdd"/>Список</label>
+        </form>
+    </div>
+    <div id="forTab">
+        <p class="forTab">Введите количество рядков таблицы: </p>
+        <input type="text" id="numRows" class="forTextArea validation"/>
+        <div class="forDisplay">
+        <p class="forTab">Введите количество столбцов таблицы: </p>
+        <input type="text" id="numCol" class="forTextArea validation"/>
+            </div>
+        <h4>Стилизируйте таблицу:</h4>
+
+        <p class="forTab">Введите ширину ячейки таблицы: </p>
+        <input type="text" id="widthCol" class="forTextArea validation"/>
+        <div class="forDisplay">
+        <p class="forTab">Введите висоту ячейки таблицы: </p>
+        <input type="text" id="heightCol" class="forTextArea validation"/>
+        </div>
+        <div>
+            <div class="forDisplay">
+            <p class="forTab">Толщина:</p>
+            <input type="text" id="borderTab" class="forTextArea validation"/>
+            </div>
+            <div class="forDisplay">
+            <p class="forTab">Тип линии:</p>
+            <form id='formTypeLine' class="forTab" name="formTypeLine">
+                <select id="typeLine" name='typeLine'>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="double">double</option>
+                </select>
+            </form>
+            </div>
+                <div class="forDisplay">
+            <p class="forTab">Цвет линии:</p>
+            <form id='formColLine' class="forTab" name="formColLine">
+                <select id="colLine" name='colLine'>
+                    <option value="black">black</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                </select>
+            </form>
+                </div>
+            <button class="saveButton" id="butSaveTab">Сохранить</button>
+        </div>
+    </div>
+    <div id="forList">
+        <p class="forTab">Выберите тип списка</p>
+        <form id="radioList">
+        <label><input type="radio" name="radioList" id="checkForNum" value="num">Нумерованый:</label>
+        <label><input type="radio" name="radioList" id="checkForMark" value="mark">Маркированый:</label>
+        </form>
+        <div id="radioList2">
+        <p class="forTab">Тип маркировки списка:</p>
+        <form id='formTypeMark' class="forTab" name="formTypeMark">
+            <select id="typeMMark" name='typeMMark'>
+                <option value="circle">circle</option>
+                <option value="disc">disc</option>
+                <option value="square">square</option>
+            </select>
+            <select id="typeNMark" name='typeNMark'>
+                <option value="A">A</option>
+                <option value="a">a</option>
+                <option value="I">I</option>
+                <option value="i">i</option>
+                <option value="1">1</option>
+            </select>
+
+        </form>
+        </div>
+        <div id="radioList3">
+        <p class="forTab">Введите количество элементов списка:</p>
+        <input type="text" id="numList" class="forTextArea validation"/>
+        <button class="saveButton" id="butSaveList">Сохранить</button>
+    </div>
+    </div>
+    <div id="forNewTabLi">
+
+    </div>
+
+</div>
+<script src="js/script.js">
+</script>
+</body>
+
+</html>

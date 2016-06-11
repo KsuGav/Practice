@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            margin-left: 31%;
+        }
+        #percent{
+            margin-left: 43.5%;
+            margin-top: 14%;
+            position: absolute;
+            font-size: 45px;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="percent"><span>0</span>%</div>
+<script type="text/javascript">
+
+    var angle = 0; // угол
+    var radius = 100;
+    var coorX = 200;   // x координата центра окружности
+    var coorY = 200;   // y координата центра окружности
+var n = parseInt($("span").text());
+    window.onload = function(){
+
+        var container = document.createElement("canvas");
+        container.width = 400;
+        container.height = 400;
+        document.body.appendChild(container);
+        var context = container.getContext('2d'); // получаем конткест
+        context.fillStyle = 'white'; // цвет заливки в черный
+        context.fillRect(0, 0, container.width, container.height); //заливаем все черным
+
+       var t = setInterval(function(){
+            // считаем косинус текущего значения угла и умножаем на значение радиуса
+            var vx = Math.cos(angle)*radius;
+            // считаем синус текущего значения угла и умножаем на значение радиуса
+            var vy = Math.sin(angle)*radius;
+            context.fillStyle = '#000'; // цвет заливки
+            context.fillRect(coorX+vx, coorY+vy, 5, 5);
+            // новая позиция по x и y относительно центра окружности заливаем ее квадратиком высотой и шириной в 5 пикселей
+            angle+=0.01; // увеличиваем значение угла
+        }, 20);
+        var p = setInterval(function(){
+            n++;
+            $("span").text(n);
+            if(n==100){
+               clearInterval(p);
+                clearInterval(t)
+           }
+        },130)
+    }
+
+</script>
+
+</body>
+
+</html>

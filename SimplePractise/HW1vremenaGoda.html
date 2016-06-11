@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Времена года</title>
+	<meta charset="utf-8">
+	<style type = "text/css">
+	body {
+		margin-right: 20%;
+		margin-left: 20%;
+		font-family: sans-serif;
+	}
+	</style>
+</head>
+<body>
+	<script>
+	var numberMonth = prompt("Введите число!", "0-12");
+	var br=document.createElement("br");
+		if ((numberMonth>0)&&(numberMonth<=2)||numberMonth==12) {
+		var winter=document.createElement("img");
+		winter.src="winter.jpg";
+ 		winter.width = 800;
+ 		winter.height = 500; 
+ 		document.body.appendChild(winter); 
+ 		document.body.appendChild(br);
+ 		document.write("Зима!");
+ 		} else if ((numberMonth>=3)&&(numberMonth<=5)) {
+			var spring=document.createElement("img");
+			spring.src="spring.jpg";
+ 			spring.width = 800;
+ 			spring.height = 500; 
+ 			document.body.appendChild(spring); 
+ 			document.body.appendChild(br);
+			document.write("Весна!");
+		} else if ((numberMonth>=6)&&(numberMonth<=8)) {
+			var summer=document.createElement("img");
+ 			summer.src="summer.jpg";
+ 			summer.width = 800;
+ 			summer.height = 500; 
+ 			document.body.appendChild(summer); 
+ 			document.body.appendChild(br);
+			document.write("Лето!");
+		} else if ((numberMonth>=9)&&(numberMonth<=11)) {
+			var autumn=document.createElement("img");
+			autumn.src="autumn.jpg";
+ 			autumn.width = 800;
+ 			autumn.height = 500; 
+ 			document.body.appendChild(autumn); 
+ 			document.body.appendChild(br);
+			document.write("Осень!");
+		}  else if (!numberMonth){ 
+			alert("Ввод отменен!");
+		} else { alert("Попробуй еще раз! Помни, в году 12 месяцев!");
+				alert(numberMonth = prompt("Введите число!", "0-12"));
+	}
+	</script>
+	
+	
+</body>
+</html>

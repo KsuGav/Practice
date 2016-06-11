@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <meta charset="UTF-8">
+    <title>Orbita</title>
+</head>
+<style>
+    body{
+        background-image: url('space.jpg');
+        background-size: cover;
+        position: absolute;
+    }
+    .earth{
+        position: relative;
+        margin-left: 125%;
+        margin-top: 65%;
+        background-image: url('Earth.png');
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        z-index: 2;
+    }
+    .moon{
+        position: relative;
+        left: 509px;
+        top: -238px;
+        background-image: url('moon.png');
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+        z-index: 3;
+    }
+</style>
+<body>
+<div class="earth">
+</div>
+<div class="moon">
+</div>
+
+<script>
+    $(document).ready(function() {
+        setInterval(function(){
+            $(".moon").animate({
+                        'z-index':'-1',
+                        "top": '-100px',
+                        "left": '100px'
+//            'rotate': '180deg'
+                    },4000,"linear")
+                    .animate({
+                        'z-index':'3',
+                        'left': '509px',
+                        'top': '-238px'
+//                'rotate': '180deg'
+                    },4000,"linear");
+        },1000);
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Тесты</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+	alert("Пройдите тест с вопросами для школьника и узнайте уровень своих знаний! На вопросы отвечайте на русском либо английском языках! Удачи!")
+	var result = 0;
+	var question1 = prompt("Ваше сердце качает кровь как насос?", "Yes or No").toLowerCase();
+	if (question1 === "yes" || question1 === "да") {result +=1}
+		else { result = result--};
+	var question2 = prompt("Что такое H2O?", "Text").toLowerCase();
+	if (question2 === "water" || question2 === "вода") {result+=1}
+		else { result = result--};
+	var question3 = prompt("На каком континенте находится пустыня сахара?", "Text").toLowerCase()
+	if (question3==="afrika"||question2==="африка") {result+=1}
+		else { result = result--};
+	var question4 = prompt("Сколько ног у улитки?", "Number").toLowerCase();
+	if (question4===1||question2==="one"||question2==="одна"){result+=1}
+		else { result = result--};
+	var question5 = prompt("Какой физик написал книгу об истории времени и черных дырах?", "Галилео Галилей, Стивен Хокинг или Альберт Энштейн").toLowerCase();
+	if (question5==="Steven Hockings"||question2==="Стивен Хокинг") {result+=1}
+		else { result = result--};
+	var question6 = prompt("В каком году закончилась Вторая мировая война?", "Number").toLowerCase();
+	if (question6==="1945") {result+=1}
+		else { result = result--};
+	var question7 = prompt("Как называется наша галактика? ", "Text").toLowerCase();
+	if (question7==="млечный путь"||question2==="milky way") {result+=1}
+		else { result = result--};
+	var question8 = prompt("Сколько глаз у обыкновенной мухи?", "Number").toLowerCase();
+	if (question8==="5"|| question8==="пять"|| question8==="five") {result+=1}
+		else { result = result--};
+	var question9 = prompt("Световые волны распространяются быстрее, чем звуковые?", "Yes or No").toLowerCase();
+	if (question9 === "yes" ||question9 === "да") {result+=1}
+		else { result = result--};
+	var question10 = prompt("Сколько нужно градусов, чтобы вода закипела?", "Number").toLowerCase();
+	if (question10==="100" || question10==="сто"|| question10==="one hundred") {result+=1}
+		else { result = result--};
+	alert(result);
+	var summResult = result;
+	if ((summResult>=0)&&(summResult<=4)) {
+		document.write("Увы, скорее всего, плохо учились в школе, или все ваши знания просто выветрились из головы. Ваш результат " + summResult + " из 10! Попробуйте пройти тест еще раз!");	
+	} else if ((summResult>=5)&&(summResult<=7)) {
+		document.write("Хорошо! Ваши знания достаточны, чтобы быть интересным собеседником, но нет предела совершенству! Ваш результат " + summResult + " из 10!");
+	} else if ((summResult>=8)&&(summResult<=10)){document.write("Отлично! Вы настоящий эрудит! Продолжайте в том же духе! Ваш результат " + summResult + " из 10!")}
+
+	</script>
+</body>
+</html>
+

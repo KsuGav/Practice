@@ -1,0 +1,17 @@
+<head>
+<title> </title>
+<meta charset="utf-8">
+</head>
+<body>
+    <script>
+	var number=parseInt(prompt("number"," "));
+	var sum = 0; //кол-во цифр
+	do {
+		sum+= number%10; //считает сумму остатков
+		number=parseInt(number/10); //делим цифру на 10,чтобы получить след цифру в остатке
+	}  
+	while(number>1) //цикл длится, пока цифра больше 1
+	document.write(parseInt(sum))	
+</script>
+</body>
+</html>

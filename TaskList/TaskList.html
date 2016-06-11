@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+body{
+	background: url(bg.jpg) ;
+	background-size: cover;
+}
+#main {
+padding: 0 0 0 393px;
+background:url(em2.png);
+background-size: contain;
+border-radius: 6px;
+width: 500px;
+height: 600px;
+margin-left: 180px;		
+}
+#col1 {
+width:400px;
+height: 600px;
+top: 10px;
+float:right;
+border: black;
+position: relative;
+transform: rotate(3deg);
+
+}
+#col2{
+margin-left:-330px;
+width:400px;
+top: -10px;
+margin-top:50px;
+border: black;
+position: relative;
+transform: rotate(2deg);
+}
+#text{
+	background:transparent;
+}
+h2{
+	position: absolute;
+	top: 41px;
+	left: 83px;
+	text-shadow: 1px 2px 3px #5D5655;
+	text-decoration: underline;
+	font-family: Gabriola;
+	color: maroon;
+}
+label{
+	color: maroon;
+	font-family: cursive;
+}
+#f1{position: absolute;
+	top: 110px;
+	left: 20px;
+	overflow: auto;
+	height: 410px;
+	width: 280px;
+	overflow-color:red;
+}
+#f2{position: absolute;
+	top: 110px;
+	left: 80px;
+}
+img{
+width:80px;
+height:80px;
+padding-left: 190px;
+}
+		</style>
+	</head>
+<body >
+<div id="main">
+	<div id="col1">
+		<h2>Список заданий</h2>
+		<form name="f1" id="f1" >
+			<div class="element" onclick="remEl(this)"><input type="checkbox" name="chek1"/><label>Сходить за продуктами</label></div>
+        	<div class="element" onclick="remEl(this)"><input type="checkbox" name="chek2" /><label>Театр в 18:00</label></div>
+        	<div class="element" onclick="remEl(this)"><input type="checkbox" name="chek3" /><label>Забрать костюм из ателье</label></div>
+    	</form>
+	</div>
+	<div id="col2">
+		<h2>Добавить новое задание</h2>
+		<form  name="f2" id="f2">
+			<input type="text" name="text" id="text" id="text" /></br>
+			<img id="knopa" src="knop.png"/>
+    	</form>
+	</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+	remEl=function(element){
+		var elemLength = document.getElementsByClassName("element")
+		if(elemLength.length>1){
+ 		element.remove()
+ 		}else {alert("Нельзя удалить все задачи!")
+ 				}
+		
+	}
+
+	document.getElementById("knopa").onclick = function(){ 
+		var newDiv = document.createElement("div");
+		newDiv.className = "element"; 
+		var newInput=document.createElement("input"); 
+		var newLabel=document.createElement("label");
+		newDiv.setAttribute('onclick','remEl(this)')
+		newInput.type='checkbox'; 
+		newLabel.textContent=document.getElementById('text').value; 
+		newDiv.appendChild(newInput);
+		newDiv.appendChild(newLabel)
+		f1.appendChild(newDiv); 
+	} 
+
+});
+</script>
+</body>
+</html>

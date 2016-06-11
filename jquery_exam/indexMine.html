@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-git.min.js"></script>
+    <!--<script src="../../../HW%20JS/доделать/Dinter%203.0/wwwJQuery/jquery-2.1.3.min.js"></script>-->
+    <!--<script src="../../../HW%20JS/доделать/Dinter%203.0/wwwJQuery/jquery.easing.1.3.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <section id="stylePannel">
+            <button value="Edit" id="editBut" name="edit">Edit</button>
+            <button id="fontWeight" name="font-weight" class="bold">B</button>
+            <button id="fontStyle" name="font-style" class="italic">I</button>
+            <button id="textDecoration" name="text-decoration" class="underline">U</button>
+        <form id="chooseFontSize" onchange="setStyle(this)" name="font-size">
+            <select name="fontSize" id="fontSize">
+                <option id="text_size7" value="7pt">7pt</option>
+                <option id="text_size8" value="8pt">8pt</option>
+                <option id="text_size9" value="9pt">9pt</option>
+                <option id="text_size10" value="10pt">10pt</option>
+                <option id="text_size11" value="11pt">11pt</option>
+                <option id="text_size12" value="12pt">12pt</option>
+                <option id="text_size14" value="14pt">14pt</option>
+                <option id="text_size16" value="16pt">16pt</option>
+                <option id="text_size18" value="18pt">18pt</option>
+                <option id="text_size20" value="20pt">20pt</option>
+                <option id="text_size30" value="30pt">30pt</option>
+                <option id="text_size40" value="40pt">40pt</option>
+            </select>
+        </form>
+        <form id='chooseFontFamily' onchange="setStyle(this)" name="font-family">
+            <select id="fontFamily" name='fontFamily'>
+                <option id="textf_georgia" value="Georgia">Georgia</option>
+                <option id="textf_tines" value="Times New Roman">Times New Roman</option>
+                <option id="textf_arial" value="Arial">Arial</option>
+                <option id="textf_helvetica" value="Helvetica">Helvetica</option>
+                <option id="textf_comic" value="Comic Sans MS">Comic Sans MS</option>
+                <option id="textf_tahoma" value="Tahoma">Tahoma</option>
+                <option id="textf_verdana" value="Verdana">Verdana</option>
+                <option id="textf_geneva" value="Geneva">Geneva</option>
+                <option id="textf_trebuchet" value="Trebuchet MS">Trebuchet MS</option>
+                <option id="textf_impact" value="Impact">Impact</option>
+                <option id="textf_charcoal" value="Charcoal">Charcoal</option>
+                <option id="textf_gadget" value="Gadget">Gadget</option>
+            </select>
+        </form>
+        <form name="chooseColor">
+            <input type="button" value="Color" name="color" id="color">
+            <input type="button" value="Background" name="bg" id="bg">
+        </form>
+        <form id="chooseTextAlign"  onchange="setStyle(this)" name="chooseTextAlign">
+            <label><input type="radio" id="left" name="text-align">left</label>
+            <label><input type="radio" id="center" name="text-align">center</label>
+            <label><input type="radio" id="right" name="text-align">right</label>
+        </form>
+    </section>
+    <section id="editPannel">
+            <button value="Save" id="saveBut">Save</button>
+            <button value="Create table" id="createTabBut">Create table</button>
+            <button value="Create list" id="createListBut">Create list</button>
+    </section>
+</header>
+<main>
+    <section id="text" >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati voluptas, quas nemo eos rerum dicta, natus facilis veritatis animi recusandae sed neque reiciendis minima facere, porro tempore qui velit odit.</p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium atque, earum tempora quis officiis, voluptates autem aliquam dolor temporibus quisquam id natus repudiandae, reiciendis, laborum dignissimos enim repellat molestias architecto!</span><span>Obcaecati laborum distinctio deserunt, excepturi quasi magnam at earum itaque. Cupiditate provident reprehenderit eveniet ipsa id, fuga ab omnis aut ad, sequi illum fugit quo recusandae blanditiis, quas sunt odit.</span> </p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet est magnam expedita. Neque quasi distinctio nobis enim atque expedita iure totam, libero aperiam ea dolorum, quos nihil ab voluptas, provident.</span>
+            <span>Repudiandae amet pariatur, deleniti laboriosam aliquam officia distinctio, quae magnam? Explicabo dignissimos veniam neque vero voluptatibus maxime nulla, quae ratione, aperiam ullam. Debitis ducimus, quibusdam atque aut cum sit cumque?</span>
+            <span>Nulla quas provident, voluptatibus impedit ullam blanditiis quidem dolore voluptatum, sequi quibusdam commodi iste sapiente sit vitae minima. Amet facere tempora sequi, sunt nulla nemo ea quasi esse doloribus voluptas.</span>	 </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nemo, earum nisi mollitia </p>
+    </section>
+    <section id="editor">
+        <form name="editForm">
+            <textarea id="editorField" name="editorField"></textarea>
+        </form>
+    </section>
+    <section id="blocks">
+        <!-- Table with colors -->
+        <article id="colorTab">
+                <button  id="bgImage" value="Background image" name="bgImage">Background image</button>
+            <table>
+                <tr>
+                    <td style="background-color: #4d94ff"></td>
+                    <td style="background-color: #ffb366"></td>
+                    <td style="background-color: #446600"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ff8000"></td>
+                    <td style="background-color: #00e699"></td>
+                    <td style="background-color: #ffff66"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ff66b3"></td>
+                    <td style="background-color: #663300"></td>
+                    <td style="background-color: #7300e6"></td>
+                </tr>
+            </table>
+        </article>
+        <!-- Table with Images -->
+        <article id="imageTab">
+            <form name="addColor">
+                <input type="button" value="Background color" name="bgColor">
+            </form>
+            <table>
+                <tr>
+                    <td style="background-image: url(img/bgImg1.jpg)"></td>
+                    <td style="background-image:url(img/bgImg2.jpg)"></td>
+                    <td style="background-image: url(img/bgImg3.jpg)"></td>
+                </tr>
+                <tr>
+                    <td style="background-image: url(img/bgImg4.jpg)"></td>
+                    <td style="background-image: url(img/bgImg5.jpg)"></td>
+                    <td style="background-image: url(img/bgImg6.jpg)"></td>
+                </tr>
+                <tr>
+                    <td style="background-image: url(img/bgImg7.jpg)"></td>
+                    <td style="background-image: url(img/bgImg8.jpg)"></td>
+                    <td style="background-image: url(img/bgImg9.jpg)"></td>
+                </tr>
+            </table>
+            <form name="uploadFile">
+                <label>Загрузити файл
+                    <input type="file" name="uploadImg" id="uploadImg"  accept="image/*">
+                </label>
+            </form>
+        </article>
+        <!-- create table window -->
+        <article id="createTabPannel">
+            <form name="createTabForm">
+                <div class="column">
+                    <div class="field">
+                        <label for="rows"> К-ть рядків:</label>
+                        <input type="text" name="rows" id="rows">
+                    </div>
+                    <div class="field">
+                        <label for="width">Ширина:</label>
+                        <input type="text" name="width" id="width">
+                    </div>
+                    <div class="field">
+                        <label for="cellspacing">Cellspacing:</label>
+                        <input type="text" name="cellspacing" id="cellspacing">
+                    </div>
+                    <div class="field">
+                        <label for="borderWidth">Товщина рамки:</label>
+                        <input type="text" name="borderWidth" id="borderWidth">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="cols"> К-ть стовпців: </label>
+                        <input type="text" name="cols" id="cols">
+                    </div>
+                    <div class="field">
+                        <label for="height">Висота:</label>
+                        <input type="text" name="height" id="height">
+                    </div>
+                    <div class="field">
+                        <label for="borderColor">Колір рамки:</label>
+                        <input type="text" name="borderColor" id="borderColor">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <input type="reset" value="Скинути" name="resetListB">
+                    <input type="button" value="Створити" id="createTabB">
+                </div>
+            </form>
+        </article>
+        <!-- create list window -->
+        <article id="createListPannel">
+            <form name="chooseList">
+                <p>Тип списку:</p>
+                <label><input type="radio" name="ol" checked="">ol</label>
+                <label>Тип маркера:
+                    <select id="markType">
+                        <option value="decimal">default</option>
+                        <option value="upper-alpha">A</option>
+                        <option value="lower-alpha">a</option>
+                        <option value="upper-roman">I</option>
+                        <option value="lower-roman">i</option>
+                    </select>
+                </label>
+                <label>Кількість елементів : <input type="text" id="items"></label>
+                <input type="reset" value="Скинути" id="resetListB">
+                <input type="button" value="Створити" id="createListB">
+            </form>
+        </article>
+        <div id="toBlockBg"></div>
+    </section>
+</main>
+<script src="js/main1.js"></script>
+</body>
+</html>

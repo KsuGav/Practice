@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Времена года</title>
+	<meta charset="utf-8">
+	</head>
+<body>
+	<script>
+	var numberMonth = prompt("Введите число!", "1-12");
+		if ((numberMonth>0)&&(numberMonth<=2)||numberMonth==12) {
+		document.write("Зима!");
+ 		} else if ((numberMonth>=3)&&(numberMonth<=5)) {
+			document.write("Весна!");
+		} else if ((numberMonth>=6)&&(numberMonth<=8)) {
+			document.write("Лето!");
+		} else if ((numberMonth>=9)&&(numberMonth<=11)) {
+			document.write("Осень!");
+		} else if (!numberMonth){ 
+			alert("Ввод отменен!");
+		} else { alert("Попробуй еще раз! Помни, в году 12 месяцев!");
+				alert(numberMonth = prompt("Введите число!", "0-12"));
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+div{
+    border: 1px solid black;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    background: moccasin;
+}
+    label{
+        display: block;
+        margin: 15px;
+    }
+    #butSave{
+        display: block;
+        margin-left: 40%;
+        margin-top: 20px;
+    }
+
+</style>
+<body>
+<div>
+    <form>
+        <label >Логин:  <input type="text" id="login" /></label>
+        <label >Пароль: <input type="password" id="pass"/></label>
+        <input type="button" value="Сохранить" id="butSave"/>
+    </form>
+</div>
+<script>
+    var persons = {
+        Ksu: "gav",
+        Olga: "song",
+        Lena: "mom",
+        Alla: "123",
+        Ira: "456",
+        Sveta: "svet",
+        Luda: "1l2",
+    };
+    function getId(a) {
+        return document.getElementById(a);
+    }
+    getId("butSave").onclick = function() {
+        var logValue = getId("login").value;
+        if (persons[logValue]) {
+            var pasValue = getId("pass").value;
+            if(persons[logValue]==pasValue){
+                alert("Hello, "+logValue+"!")
+            }else{
+                alert("It's not correct password!")
+            }
+        } else {
+            alert("Error! Maybe it's not correct name or password?")
+        }
+    }
+    
+    //key - властивість
+    //humans[key] - значення властивості. алерт кеуБ а не логВалюе
+</script>
+</body>
+</html>
